@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SimpleNavigation"
         xmlns:VM="clr-namespace:SimpleNavigation.ViewModel"
         xmlns:Converter="clr-namespace:SimpleNavigation.Converter"
         mc:Ignorable="d"
@@ -21,14 +20,21 @@
         </Grid.ColumnDefinitions>
         <StackPanel>
             <ListView 
-                ItemsSource="{Binding NavigationOptions}" 
-                SelectedItem="{Binding CurrentView}">
+                x:Name="NavigationList"
+                ItemsSource="{Binding NavigationOptions}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderBrush="{Binding Color}"
-                            ToolTip="{Binding Description}"
-                            BorderThickness="2">
-                        <TextBlock Text="{Binding Title}" />
+                    <Border 
+                        Height="35"
+                        BorderBrush="Gray"
+                        Background="{Binding Color}"
+                        ToolTip="{Binding Description}"
+                        BorderThickness="2">
+                        <TextBlock 
+                            VerticalAlignment="Center"
+                            FontWeight="DemiBold"
+                            Margin="10"
+                            Text="{Binding Title}" />
                     </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -36,6 +42,6 @@
         </StackPanel>
         <ContentControl
             Grid.Column="1"
-            Content="{Binding CurrentView,Converter={StaticResource NavigationConverter}}"/>
+            Content="{Binding ElementName=NavigationList,Path=SelectedItem,Converter={StaticResource NavigationConverter}}"/>
     </Grid>
 </Window>

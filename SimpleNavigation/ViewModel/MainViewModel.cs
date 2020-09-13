@@ -11,7 +11,6 @@ namespace SimpleNavigation.ViewModel
 {
     public class MainViewModel
     {
-        public NavigationModel CurrentView { get; set; }
         public List<NavigationModel> NavigationOptions { get => NavigationService.GetInstance.NavigationOptions; }
     
     }
