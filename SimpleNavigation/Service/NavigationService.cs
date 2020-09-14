@@ -29,6 +29,11 @@ namespace SimpleNavigation.Service
             return null;
         }
 
+        //Usage of the Func, provides each call new initialization of the view
+        //If you need initialized views, just remove the Func
+        //-------------------------------------------------------------------
+        //Readonly is used only for performance reasons
+        //Of course there is option to add the elements to the collection, if dynamic navigation mutation is needed
         private readonly Dictionary<NavigationModel, Func<UserControl>> NavigationNameToUserControl = new Dictionary<NavigationModel, Func<UserControl>>
         {
             { new NavigationModel("Navigate To A","This will navigate to the A View",Brushes.Aqua), ()=>{ return new View.ViewA(); } },
