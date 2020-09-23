@@ -1,0 +1,36 @@
+﻿<local:LayoutAwarePage
+    x:Class="App1.Win2DPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid  x:Name="LayoutRoot" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid x:Name="Input" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock TextWrapping="Wrap" Grid.Row="0" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left">
+                This version uses Win2d, which is wrapper for UWP for the DirectX 2D.
+            </TextBlock>
+        </Grid>
+        <StackPanel Grid.Row="1" x:Name="Output">
+            
+        <canvas:CanvasControl
+            x:Name="canvas" Draw="canvasControl_Draw" IsTabStop="True" 
+            KeyDown="canvas_KeyDown" CreateResources="canvas_CreateResources"
+            ClearColor="#00000000" Width="1024" Height="1024"
+            HorizontalAlignment="Center" VerticalAlignment="Center"  >
+
+        </canvas:CanvasControl>
+        </StackPanel>
+    </Grid>
+</local:LayoutAwarePage>
