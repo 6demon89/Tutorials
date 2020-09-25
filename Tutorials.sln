@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleNavigation", "SimpleN
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App1", "App1\App1.csproj", "{0E9CD36D-4686-4F9E-A9A4-22593F6C9780}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLE", "BLE", "{68F9BD7E-D4CC-4621-97C8-C57D8C8C1349}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLESniffer.WPF", "BLESniffer.WPF\BLESniffer.WPF.csproj", "{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,9 +71,32 @@ Global
 		{0E9CD36D-4686-4F9E-A9A4-22593F6C9780}.Release|x86.ActiveCfg = Release|x86
 		{0E9CD36D-4686-4F9E-A9A4-22593F6C9780}.Release|x86.Build.0 = Release|x86
 		{0E9CD36D-4686-4F9E-A9A4-22593F6C9780}.Release|x86.Deploy.0 = Release|x86
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}.Debug|ARM.Build.0 = Debug|Any CPU
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}.Debug|x64.Build.0 = Debug|Any CPU
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}.Debug|x86.Build.0 = Debug|Any CPU
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}.Release|ARM.ActiveCfg = Release|Any CPU
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}.Release|ARM.Build.0 = Release|Any CPU
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}.Release|ARM64.Build.0 = Release|Any CPU
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}.Release|x64.ActiveCfg = Release|Any CPU
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}.Release|x64.Build.0 = Release|Any CPU
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}.Release|x86.ActiveCfg = Release|Any CPU
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EF28E47D-E342-4FB4-8B3F-C1C24F388FBF} = {68F9BD7E-D4CC-4621-97C8-C57D8C8C1349}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A585AFCB-B35F-4AC2-A509-EE45FB1A5D9B}

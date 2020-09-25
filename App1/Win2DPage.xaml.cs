@@ -43,9 +43,10 @@ namespace App1
         }
         public void Draw(CanvasDrawEventArgs _args, CanvasBitmap _bitmap)
         {
-            column += 10;
-            _args.DrawingSession.DrawImage(_bitmap, column + 4, row + 4);
+            _args.DrawingSession.DrawImage(_bitmap, column, row);
         }
+
+        public void Move(int _column) => column = _column;
     }
 
     /// <summary>
@@ -58,7 +59,9 @@ namespace App1
         private List<Enemy> Enemies = new List<Enemy>();
         private CanvasBitmap enemyBitmap;
 
-        public DispatcherTimer Timer { get; private set; }
+        public DispatcherTimer DrawTimer { get; private set; }
+        public DispatcherTimer UpdateTimer { get; private set; }
+
         public Win2DPage()
         {
             this.InitializeComponent();
@@ -71,36 +74,30 @@ namespace App1
             // When the baddies catch the player, the timer is stopped. In a real game, the "game over"
             // message would be displayed.
 
-            this.Timer = new DispatcherTimer();
-            this.Timer.Interval = new TimeSpan(0, 0, 0, 0, 15);
-            this.Timer.Tick += timer_Tick;
-            this.Timer.Start();
+            DrawTimer = new DispatcherTimer();
+            DrawTimer.Interval = new TimeSpan(0, 0, 0, 0, 15);
+            DrawTimer.Tick += Redraw_Tick;
+            DrawTimer.Start();
+
+            UpdateTimer = new DispatcherTimer();
+            UpdateTimer.Interval = new TimeSpan(0, 0, 0, 1, 0);
+            UpdateTimer.Tick += Physics_Tick;
+            UpdateTimer.Start();
         }
 
-        private void timer_Tick(object sender, object e)
+        private void Physics_Tick(object sender, object e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Redraw_Tick(object sender, object e)
         {
             // Draw everything by making the canvas "invalid", triggering the redraw.
             canvas.Invalidate();
         }
 
         Random rnd = new Random();
-        private Vector2 RndPosition()
-        {
-            double x = rnd.NextDouble() * 500f;
-            double y = rnd.NextDouble() * 500f;
-            return new Vector2((float)x, (float)y);
-        }
-
-        private float RndRadius()
-        {
-            return (float)rnd.NextDouble() * 150f;
-        }
-
-        private byte RndByte()
-        {
-            return (byte)rnd.Next(256);
-        }
-
+      
         private Color RndColor()
         {
             var c = new Color();
